@@ -181,25 +181,25 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         rp.setBounds(10, 440, 50, 50);
         rp.setIcon(redN);
         this.add(rp);
-        rpt.setBounds(60, 450, 50, 20);
+        rpt.setBounds(60, 450, 400, 20);
         this.add(rpt);
 
         bp.setBounds(110, 440, 50, 50);
         bp.setIcon(yellowN);
         this.add(bp);
-        bpt.setBounds(160, 450, 50, 20);
+        bpt.setBounds(160, 450, 400, 20);
         this.add(bpt);
 
         rk.setBounds(250, 440, 50, 50);
         rk.setIcon(redK);
         this.add(rk);
-        rkt.setBounds(305, 450, 50, 20);
+        rkt.setBounds(305, 450, 400, 20);
         this.add(rkt);
 
         bk.setBounds(365, 440, 50, 50);
         bk.setIcon(yellowK);
         this.add(bk);
-        bkt.setBounds(420, 450, 50, 20);
+        bkt.setBounds(420, 450, 100, 20);
         this.add(bkt);
 
        // g=getGraphics();
@@ -287,9 +287,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
     public void newGame()	{                            //creates a new game
 
-        //Blue takes the first move in both modes
+        //Yellow takes the first move in both modes
         //If someone wants to move secondly, red has to be selected
-        //Blue is always at the bottom of the board
+        //Yellow is always at the bottom of the board
 
         selectedColor= c1.isSelected() ? "red" : "yellow";
         selectedMode=p1.isSelected()?1:2;
@@ -332,7 +332,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
         if (selectedMode == 1 && selectedColor.equalsIgnoreCase("yellow"))
 		{
-            this.toMove = yellowNormal;
+            this.toMove = redNormal;
             play();
 		}
 		else if (selectedMode==1 && selectedColor.equalsIgnoreCase("red"))
