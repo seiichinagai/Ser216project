@@ -10,8 +10,8 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
     JTextArea msg=new JTextArea("Start a new game... Yellow is to move first...");
     
-    ImageIcon redN=new ImageIcon(new ImageIcon("images/red_normal.png").getImage());//red_normal.jpg
-    ImageIcon yellowN=new ImageIcon(new ImageIcon("images/yellow_normal.png").getImage());//yellow_normal.jpg
+    ImageIcon redN=new ImageIcon(new ImageIcon("images/red_normal.jpg").getImage());//red_normal.jpg
+    ImageIcon yellowN=new ImageIcon(new ImageIcon("images/yellow_normal.jpg").getImage());//yellow_normal.jpg
     ImageIcon redK=new ImageIcon(new ImageIcon("images/red_king.jpg").getImage());//red_king.jpg
     ImageIcon yellowK=new ImageIcon(new ImageIcon("images/yellow_king.jpg").getImage());//yellow_king.jpg
     ImageIcon hlp=new ImageIcon(new ImageIcon("images/help.jpg").getImage());//help.jpg
@@ -124,7 +124,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         nwB.setBounds(405,70,95,25);//297
         this.add(nwB);
         unB.setBounds(405,100,95,25);
-        //this.add(unB);
+        this.add(unB);
         hlpB.setBounds(415,10,25,25);
         this.add(hlpB);
         snB.setBounds(460,10,25,25);
@@ -143,18 +143,18 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         this.add(p1);
         this.add(p2);
 
-        col.setBounds(110,400,80,25);
-        //this.add(col);
+        col.setBounds(415,340,80,25);
+        this.add(col);
         c1.addActionListener(this);
         c2.addActionListener(this);
         c1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         c2.setCursor(new Cursor(Cursor.HAND_CURSOR));
         colors.add(c1);
         colors.add(c2);
-        c1.setBounds(90,440,80,25);
-        c2.setBounds(90,420,80,25);
-        //this.add(c1);
-        //this.add(c2);
+        c1.setBounds(415,402,80,25);
+        c2.setBounds(415,374,80,25);
+        this.add(c1);
+        this.add(c2);
 
         level.setCursor(new Cursor(Cursor.HAND_CURSOR));
         level.addItemListener(this);
@@ -164,7 +164,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         level.addItem("Bit Difficult");
         level.addItem("Tough");
         level.setSelectedIndex(2);
-        level.setBounds(415,200,80,25);
+        level.setBounds(415,200,400,25);
         this.add(level);
 
         diff.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -181,25 +181,25 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         rp.setBounds(10, 440, 50, 50);
         rp.setIcon(redN);
         this.add(rp);
-        rpt.setBounds(60, 450, 60, 20);
+        rpt.setBounds(60, 450, 50, 20);
         this.add(rpt);
 
         bp.setBounds(110, 440, 50, 50);
         bp.setIcon(yellowN);
         this.add(bp);
-        bpt.setBounds(160, 450, 90, 20);
+        bpt.setBounds(160, 450, 50, 20);
         this.add(bpt);
 
         rk.setBounds(250, 440, 50, 50);
         rk.setIcon(redK);
         this.add(rk);
-        rkt.setBounds(305, 450, 60, 20);
+        rkt.setBounds(305, 450, 50, 20);
         this.add(rkt);
 
         bk.setBounds(365, 440, 50, 50);
         bk.setIcon(yellowK);
         this.add(bk);
-        bkt.setBounds(420, 450, 100, 20);
+        bkt.setBounds(420, 450, 50, 20);
         this.add(bkt);
 
        // g=getGraphics();
@@ -332,7 +332,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
         if (selectedMode == 1 && selectedColor.equalsIgnoreCase("yellow"))
 		{
-            this.toMove = redNormal;
+            this.toMove = yellowNormal;
             play();
 		}
 		else if (selectedMode==1 && selectedColor.equalsIgnoreCase("red"))

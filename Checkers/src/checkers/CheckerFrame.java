@@ -39,7 +39,7 @@ public class CheckerFrame extends JFrame implements ActionListener{
 
         this.setIconImage(new ImageIcon("images/icon.jpg").getImage());
 
-        setSize(508,520);
+        setSize(508,520); //width, height of entire gui screen
       //  setSize(600,600); I was playing with size
         setLocation((int)getToolkit().getScreenSize().getWidth()/2-254,(int)getToolkit().getScreenSize().getHeight()/2-310);
         setResizable(false);
