@@ -31,7 +31,7 @@ public class CheckerFrame extends JFrame implements ActionListener{
         stB.setIcon(new ImageIcon("images/checker.png"));
         stB.setBackground(Color.LIGHT_GRAY);
         stB.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        stB.setBounds(140,400,200,60);
+        stB.setBounds(140,420,200,60);
         stB.setFont(new Font("Times new roman",Font.BOLD,20));
         stB.addActionListener(this);
         stB.setFocusPainted(false);
@@ -39,8 +39,8 @@ public class CheckerFrame extends JFrame implements ActionListener{
 
         this.setIconImage(new ImageIcon("images/icon.jpg").getImage());
 
-        setSize(508,520); //width, height of entire gui screen
-      //  setSize(600,600); I was playing with size
+       // setSize(508,520); //width, height of entire gui screen
+        setSize(600,600); //I was playing with size
         setLocation((int)getToolkit().getScreenSize().getWidth()/2-254,(int)getToolkit().getScreenSize().getHeight()/2-310);
         setResizable(false);
         setVisible(true);

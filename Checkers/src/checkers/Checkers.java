@@ -100,18 +100,18 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         hlpB.setFocusPainted(false);
         snB.setFocusPainted(false);
 
-        diff.setFont(new Font("SansSerif",Font.PLAIN,11));
-        col.setFont(new Font("SansSerif",Font.PLAIN,11));
-        mode.setFont(new Font("SansSerif",Font.PLAIN,11));
-        c1.setFont(new Font("SansSerif",Font.PLAIN,11));
-        c2.setFont(new Font("SansSerif",Font.PLAIN,11));
-        p1.setFont(new Font("SansSerif",Font.PLAIN,11));
-        p2.setFont(new Font("SansSerif",Font.PLAIN,11));
-        nwB.setFont(new Font("SansSerif",Font.BOLD,11));
-        unB.setFont(new Font("SansSerif",Font.BOLD,11));
-        hlpB.setFont(new Font("SansSerif",Font.PLAIN,11));
-        snB.setFont(new Font("SansSerif",Font.PLAIN,11));
-        msg.setFont(new Font("SansSerif",Font.PLAIN,11)); 
+        diff.setFont(new Font("SansSerif",Font.PLAIN,20));
+        col.setFont(new Font("SansSerif",Font.PLAIN,20));
+        mode.setFont(new Font("SansSerif",Font.PLAIN,20));
+        c1.setFont(new Font("SansSerif",Font.PLAIN,20));
+        c2.setFont(new Font("SansSerif",Font.PLAIN,20));
+        p1.setFont(new Font("SansSerif",Font.PLAIN,20));
+        p2.setFont(new Font("SansSerif",Font.PLAIN,20));
+        nwB.setFont(new Font("SansSerif",Font.BOLD,20));
+        unB.setFont(new Font("SansSerif",Font.BOLD,20));
+        hlpB.setFont(new Font("SansSerif",Font.PLAIN,20));
+        snB.setFont(new Font("SansSerif",Font.PLAIN,20));
+        msg.setFont(new Font("SansSerif",Font.PLAIN,20)); 
 
         nwB.setCursor(new Cursor(Cursor.HAND_CURSOR));
         unB.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -121,13 +121,13 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         unB.addActionListener(this);
         hlpB.addActionListener(this);
         snB.addActionListener(this);
-        nwB.setBounds(405,70,95,25);//297
+        nwB.setBounds(405,70,110,40);//297
         this.add(nwB);
-        unB.setBounds(405,100,95,25);
+        unB.setBounds(405,100,110,40);
         this.add(unB);
-        hlpB.setBounds(415,10,25,25);
+        hlpB.setBounds(415,10,50,40);
         this.add(hlpB);
-        snB.setBounds(460,10,25,25);
+        snB.setBounds(460,10,50,40);
         this.add(snB);
 
         mode.setBounds(420,260,80,25);
@@ -143,7 +143,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         this.add(p1);
         this.add(p2);
 
-        col.setBounds(415,340,80,25);
+        col.setBounds(415,350,80,25);
         this.add(col);
         c1.addActionListener(this);
         c2.addActionListener(this);
@@ -174,7 +174,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         this.addMouseListener(this);
         this.addMouseMotionListener(this);
 
-        msg.setBounds(0,405,400,20);
+        msg.setBounds(0,405,400,35);
         msg.setEnabled(false);
         this.add(msg);
 
@@ -184,22 +184,25 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         rpt.setBounds(60, 450, 400, 20);
         this.add(rpt);
 
-        bp.setBounds(110, 440, 50, 50);
+        //bp.setBounds(110, 440, 50, 50);
+        bp.setBounds(250, 440, 50, 50);
         bp.setIcon(yellowN);
         this.add(bp);
-        bpt.setBounds(160, 450, 400, 20);
+        bpt.setBounds(60, 500, 400, 20);
         this.add(bpt);
 
-        rk.setBounds(250, 440, 50, 50);
+       // rk.setBounds(250, 440, 50, 50);
+        rk.setBounds(10,490,50,50);
         rk.setIcon(redK);
         this.add(rk);
         rkt.setBounds(305, 450, 400, 20);
         this.add(rkt);
 
-        bk.setBounds(365, 440, 50, 50);
+       // bk.setBounds(365, 440, 50, 50);
+        bk.setBounds(250,490,50,50);
         bk.setIcon(yellowK);
         this.add(bk);
-        bkt.setBounds(420, 450, 100, 20);
+        bkt.setBounds(305, 500, 100, 20);
         this.add(bkt);
 
        // g=getGraphics();
@@ -332,12 +335,12 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
         if (selectedMode == 1 && selectedColor.equalsIgnoreCase("yellow"))
 		{
-            this.toMove = redNormal;
+            this.toMove = redNormal;  //changed to redNormal from yellowNormal makes yellow go first
             play();
 		}
 		else if (selectedMode==1 && selectedColor.equalsIgnoreCase("red"))
 		{
-           this.toMove = redNormal;
+           this.toMove = redNormal; //changed to redNormal from yellowNormal makes yellow go first
             play();
 		}
 
