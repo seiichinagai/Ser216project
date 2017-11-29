@@ -37,12 +37,12 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     JLabel col=new JLabel("Colour");
     JLabel diff=new JLabel("Difficulty Level");
     JLabel rp=new JLabel();
-    JLabel rpt=new JLabel("Your Piece");
+    JLabel rpt=new JLabel("Opponent's");
     JLabel bpt=new JLabel("Opponent's Piece");
     JLabel bp=new JLabel();
     JLabel rk=new JLabel();
     JLabel rkt=new JLabel("Your King");
-    JLabel bkt=new JLabel("Opponent's King");
+    JLabel bkt=new JLabel("Your King");
     JLabel bk=new JLabel();
 
     JComboBox level=new JComboBox();
@@ -52,10 +52,10 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     int difficulty;
 
     static final int redNormal = 1;
-	static final int yellowNormal = 2;
-	static final int redKing = 3;
-	static final int yellowKing = 4;
-	static final int empty = 0;
+    static final int yellowNormal = 2;
+    static final int redKing = 3;
+    static final int yellowKing = 4;
+    static final int empty = 0;
 
     int currType;
     boolean movable;
@@ -242,6 +242,20 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             c2.setVisible(true);
             level.setEnabled(true);
             level.setVisible(true);
+		
+	    if(c1.isSelected()){
+	        rpt.setText("Your Piece");
+		bpt.setText("Your King");
+		rkt.setText("Opponent's Piece");
+		bkt.setText("Opponent's King");
+	    }
+	    if(c2.isSelected()){
+		rpt.setText("Opponent's Piece");
+		bpt.setText("Opponent's King");
+		rkt.setText("Your Piece");
+		bkt.setText("Your King");
+	    }
+		
         }
         if(e.getActionCommand().equalsIgnoreCase("2-Player")){
             new PlaySound("sounds/option.wav").start();
@@ -256,12 +270,25 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             level.setEnabled(false);
             level.setVisible(false);
             c2.setSelected(true);
+		
+	    rpt.setText("Player 2 Piece");
+            bpt.setText("Player 2 King");
+            rkt.setText("Player 1 Piece");
+            bkt.setText("Player 1 King");
         }
         if(e.getActionCommand().equalsIgnoreCase("red")){
             new PlaySound("sounds/option.wav").start();
+	    rpt.setText("Your Piece");
+	    bpt.setText("Your King");
+	    rkt.setText("Opponent's Piece");
+	    bkt.setText("Opponent's King");
         }
         if(e.getActionCommand().equalsIgnoreCase("yellow")){
             new PlaySound("sounds/option.wav").start();
+	    rpt.setText("Opponent's Piece");
+	    bpt.setText("Opponent's King");
+	    rkt.setText("Your Piece");
+	    bkt.setText("Your King");
         }
         if(e.getActionCommand().equalsIgnoreCase("New Game")){
             new PlaySound("sounds/button.wav").start();
