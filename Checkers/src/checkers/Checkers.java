@@ -74,7 +74,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     boolean highlight=false;
 
     int toMove =redNormal;
-	int loser = empty;
+    int loser = empty;
 
     static boolean silent=false;
 
@@ -121,13 +121,14 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         unB.addActionListener(this);
         hlpB.addActionListener(this);
         snB.addActionListener(this);
-        nwB.setBounds(405,70,110,40);//297
+        nwB.setBounds(415,110,165,40);//297
         this.add(nwB);
-        unB.setBounds(405,100,110,40);
+        unB.setBounds(415,110,165,40);
         this.add(unB);
-        hlpB.setBounds(415,10,50,40);
+	unB.setEnabled(false);
+        hlpB.setBounds(415,10,45,40);
         this.add(hlpB);
-        snB.setBounds(460,10,50,40);
+        snB.setBounds(460,10,45,40);
         this.add(snB);
 
         mode.setBounds(420,260,80,25);
@@ -138,12 +139,12 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         p2.setCursor(new Cursor(Cursor.HAND_CURSOR));
         players.add(p1);
         players.add(p2);
-        p1.setBounds(415,290,80,25);
-        p2.setBounds(415,318,80,25);
+        p1.setBounds(415,290,165,25);
+        p2.setBounds(415,318,165,25);
         this.add(p1);
         this.add(p2);
 
-        col.setBounds(415,350,80,25);
+        col.setBounds(415,350,165,25);
         this.add(col);
         c1.addActionListener(this);
         c2.addActionListener(this);
@@ -151,8 +152,8 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         c2.setCursor(new Cursor(Cursor.HAND_CURSOR));
         colors.add(c1);
         colors.add(c2);
-        c1.setBounds(415,402,80,25);
-        c2.setBounds(415,374,80,25);
+        c1.setBounds(415,402,165,25);
+        c2.setBounds(415,374,165,25);
         this.add(c1);
         this.add(c2);
 
@@ -164,11 +165,11 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         level.addItem("Bit Difficult");
         level.addItem("Tough");
         level.setSelectedIndex(2);
-        level.setBounds(415,200,400,25);
+        level.setBounds(415,200,160,25);
         this.add(level);
 
         diff.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        diff.setBounds(415,170,100,25);
+        diff.setBounds(415,170,160,25);
         this.add(diff);
 
         this.addMouseListener(this);
