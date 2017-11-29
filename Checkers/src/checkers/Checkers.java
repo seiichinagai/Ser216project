@@ -302,7 +302,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
         won=0;
 
-        undoCount=0;
+        undoCount=1;
 
 
         highlight = false;
@@ -368,7 +368,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     }
 
     public void undo(){            //undo function
-        undoCount=1;
+        undoCount=2;
         for(int i=0;i<8;i++){
             System.arraycopy(preBoard3[i],0,board[i],0,8);              //copies previous board
         }
@@ -463,7 +463,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         showStatus();
 	}
 
-    private boolean isPossibleSquare(int i, int j) {
+    public boolean isPossibleSquare(int i, int j) {
 		return (i+j)%2 == 1;
     }
 
@@ -576,7 +576,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             }            
             new GameWin("Red",this.getLocationOnScreen());
             won=1;
-            undoCount=0;
+            undoCount=1;
             newGame();            
         }
     }
