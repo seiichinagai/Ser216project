@@ -1,7 +1,8 @@
 package checkers;
 
-import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -17,24 +18,24 @@ public class PlaySound extends Thread {
 
 	private final int EXTERNAL_BUFFER_SIZE = 524288; // 128Kb
 
-	enum Position {LEFT, RIGHT, NORMAL}
+	enum Position {
+		LEFT, RIGHT, NORMAL
+	}
 
 	public PlaySound(String wavfile) {
 		filename = wavfile;
 	}
 
 	public void run() {
-        if(Checkers.silent) return;
-        
-        File soundFile = new File(filename);
-		if (!soundFile.exists()) {
-			System.err.println("Wave file not found: " + filename);
+		if (Checkers.silent)
 			return;
-		}
 
+		URL sound = getClass().getResource(filename);
 		AudioInputStream audioInputStream;
 		try {
-			audioInputStream = AudioSystem.getAudioInputStream(soundFile);
+			
+			System.out.println(sound);
+			audioInputStream = AudioSystem.getAudioInputStream(sound);
 		} catch (UnsupportedAudioFileException e1) {
 			e1.printStackTrace();
 			return;
@@ -59,8 +60,7 @@ public class PlaySound extends Thread {
 		}
 
 		if (auline.isControlSupported(FloatControl.Type.PAN)) {
-			FloatControl pan = (FloatControl) auline
-					.getControl(FloatControl.Type.PAN);
+			FloatControl pan = (FloatControl) auline.getControl(FloatControl.Type.PAN);
 		}
 
 		auline.start();
@@ -75,9 +75,10 @@ public class PlaySound extends Thread {
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
-        } finally {
+		} finally {
 			auline.drain();
 			auline.close();
 		}
 	}
 }
+
