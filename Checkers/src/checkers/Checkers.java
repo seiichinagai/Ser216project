@@ -51,11 +51,11 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     int selectedMode;
     int difficulty;
 
-    static final int redNormal = 1;
-    static final int yellowNormal = 2;
-    static final int redKing = 3;
-    static final int yellowKing = 4;
-    static final int empty = 0;
+    public static final int redNormal = 1;
+    public static final int yellowNormal = 2;
+    public static final int redKing = 3;
+    public static final int yellowKing = 4;
+    public static final int empty = 0;
 
     int currType;
     boolean movable;
@@ -475,7 +475,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         showStatus();
 	}
 
-    public boolean isPossibleSquare(int i, int j) {
+    public static boolean isPossibleSquare(int i, int j) {
 		return (i+j)%2 == 1;
     }
 
