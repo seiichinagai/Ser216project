@@ -23,7 +23,7 @@ public class StartPanel extends JPanel{
         g.setFont(new Font("Times new roman",Font.BOLD,30));
         g.drawString("CHECKERS",180,100);
         /////////////////////////////////////////////////////////////////////////
-        g.setColor(Color.YELLOW);
+        g.setColor(Color.BLUE);
         g.setFont(new Font("Times new roman",Font.BOLD,14));
         g.drawString("CS 3230 INTELLIGENT SYSTEMS",160,130);
         //////////////////////////////////////////////////////////////////////
@@ -38,7 +38,7 @@ public class StartPanel extends JPanel{
         g.drawString("K.C.B. GAJASINGHE",180,240);
         g.drawString("070137M",320,240);
         ////////////////////////////////////////////////////////////////////////
-        g.drawImage(new ImageIcon("images/checkersIcon.jpg").getImage(),350,280,this);//checkersIcon.jpg
+        g.drawImage(new ImageIcon("/images/checkersIcon.jpg").getImage(),350,280,this);//checkersIcon.jpg
 
 
         g.setColor(new Color(0,0,0));
@@ -51,7 +51,7 @@ public class StartPanel extends JPanel{
             else{
                 g.fill3DRect(50, i*50, 50, 50, true);
             }
-
+            
         }
         g.drawLine(150, 0, 150, 400);
     }
