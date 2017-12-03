@@ -4,15 +4,15 @@ import java.util.Vector;
 
 //class for movements
 public class CheckerMove {
-        final static int legalMove = 1;
-        final static int illegalMove = 2;
-        final static int incompleteMove = 3;
+        public final static int legalMove = 1;
+        public final static int illegalMove = 2;
+        public final static int incompleteMove = 3;
 
     /**
      * returns the index according to the given x and y values
      */
 
-    static int [] getIndex(int x,int y){
+    public static int [] getIndex(int x,int y){
         int [] index=new int [2];
         for(int i=0;i<8;i++){
             for(int j=0;j<8;j++){
@@ -31,7 +31,7 @@ public class CheckerMove {
     noMovesLeft return true if no more movents are left for the next player
     else it returns false
     */
-    static boolean noMovesLeft(int[][] board,int toMove)
+    public static boolean noMovesLeft(int[][] board,int toMove)
     {
             for (int i=0; i<8; i++){
                     for (int j=0; j<8; j++){
@@ -64,7 +64,7 @@ public class CheckerMove {
      Move checker to a new position
     */
 
-    static int ApplyMove(int[][] board,int srtI,int srtJ,int endI,int endJ)
+    public static int ApplyMove(int[][] board,int srtI,int srtJ,int endI,int endJ)
         {
 		        int result = isMoveLegal(board,srtI,srtJ,endI,endJ,colour(board[srtI][srtJ]));
                 if (result != illegalMove)
@@ -110,7 +110,7 @@ public class CheckerMove {
      Returns incompleteMove if a capture has taken place.
      Note: it does not check if a 2nd capture is possible!
     */
-    static int isMoveLegal(int[][] board,int srtI,int srtJ,int endI,int endJ,int turn)
+    public static int isMoveLegal(int[][] board,int srtI,int srtJ,int endI,int endJ,int turn)
         {
 			if (! (inRange(srtI,srtJ) && inRange(endI,endJ) ) )       //if try to move out of the board,
 				return illegalMove;                                           //returns illegal move
@@ -202,7 +202,7 @@ public class CheckerMove {
             return illegalMove;     //if the situation is not one of these it should be illegal.
         }
 
-        static int isWalkLegal(int[][] board,int srtI,int srtJ,int endI,int endJ)
+        public static int isWalkLegal(int[][] board,int srtI,int srtJ,int endI,int endJ)
         {
 			if (! (inRange(srtI,srtJ) && inRange(endI,endJ) ) )
 				return illegalMove;
@@ -230,7 +230,7 @@ public class CheckerMove {
             return illegalMove;
         }
 
-		static boolean canCapture(int[][] board, int toMove)
+		public static boolean canCapture(int[][] board, int toMove)
 		{
 			for (int i=0; i<8; i++)
 				for (int j=0; j<8; j++)
@@ -243,7 +243,7 @@ public class CheckerMove {
 
         // examines a board board to see if the piece indicated at (x,y)
         // can make a(nother) capture
-        static boolean canCapture(int[][] board, int i, int j)
+        public static boolean canCapture(int[][] board, int i, int j)
         {
                 switch (board[i][j])
                 {
@@ -348,7 +348,7 @@ public class CheckerMove {
         // canWalk() returns true if the piece on (i,j) can make a
         // legal non-capturing move
         // Imporatant to see if the game is over
-        static boolean canWalk(int[][] board, int i, int j)
+        public static boolean canWalk(int[][] board, int i, int j)
         {
                 switch ( board[i][j] )
                 {
@@ -370,7 +370,7 @@ public class CheckerMove {
                 return false;
         } 
 
-        private static boolean isEmpty(int[][] board, int i, int j)
+        public private static boolean isEmpty(int[][] board, int i, int j)
         {
                 if (i>-1 && i<8 && j>-1 && j<8)
                         if (board[i][j] == Checkers.empty)
@@ -379,7 +379,7 @@ public class CheckerMove {
         }
 
 		// returns the color of a piece
-		static int colour(int piece)
+		public static int colour(int piece)
 		{
 			switch (piece)
 			{
@@ -394,7 +394,7 @@ public class CheckerMove {
 		}
 
 		// checkers that i and j are between 0 and 7 inclusive
-        private static boolean inRange(int i, int j)
+        public static boolean inRange(int i, int j)
 		{
 			return (i>-1 && i<8 && j>-1 && j<8);
 		}
@@ -402,7 +402,7 @@ public class CheckerMove {
 
 
 //given a board, generates all the possible moves depending on whose turn
-    static Vector  generateMoves(int[][] board, int turn) {
+    public static Vector  generateMoves(int[][] board, int turn) {
      Vector moves_list = new Vector();
      int move;
 
