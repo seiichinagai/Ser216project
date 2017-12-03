@@ -84,21 +84,12 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
     Point winPoint;
 
-    Checkers(){
+    public Checkers(){
         setupGUI();
     }
 
     private void setupGUI(){
         setLayout(null);
-
-        nwB.setFocusPainted(false);
-        unB.setFocusPainted(false);
-        c1.setFocusPainted(false);
-        c2.setFocusPainted(false);
-        p1.setFocusPainted(false);
-        p2.setFocusPainted(false);
-        hlpB.setFocusPainted(false);
-        snB.setFocusPainted(false);
 
         diff.setFont(new Font("SansSerif",Font.PLAIN,20));
         col.setFont(new Font("SansSerif",Font.PLAIN,20));
@@ -185,30 +176,23 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         rpt.setBounds(60, 450, 400, 20);
         this.add(rpt);
 
-        //bp.setBounds(110, 440, 50, 50);
         bp.setBounds(250, 440, 50, 50);
         bp.setIcon(yellowN);
         this.add(bp);
         bpt.setBounds(60, 500, 400, 20);
         this.add(bpt);
 
-       // rk.setBounds(250, 440, 50, 50);
         rk.setBounds(10,490,50,50);
         rk.setIcon(redK);
         this.add(rk);
         rkt.setBounds(305, 450, 400, 20);
         this.add(rkt);
 
-       // bk.setBounds(365, 440, 50, 50);
         bk.setBounds(250,490,50,50);
         bk.setIcon(yellowK);
         this.add(bk);
         bkt.setBounds(305, 500, 150, 20);
         this.add(bkt);
-
-       // g=getGraphics();
-        //g.drawImage(redN.getImage(),30,450,this);
-
     }
 
     public void paintComponent(Graphics g)	{
@@ -575,7 +559,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     public void mouseExited(MouseEvent e) {
     }
 
-    private void showStatus() {       //prints msgs to the statuss bar
+    public void showStatus() {       //prints msgs to the statuss bar
         if (this.toMove == redNormal){
             msg.setText("Red to move");
         }
@@ -608,6 +592,27 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             newGame();            
         }
     }
+	
+	// Scaffolding for test
+	public String getMsg() {
+		return msg.getText();
+	}
+
+	// Scaffolding for test
+	public void setMove(int i) {
+		toMove = i;
+	}
+
+	// Scaffolding for test
+	public void setPreBoard(int[][] i) {
+		preBoard3 = i;
+		preToMove3 = 1;
+	}
+
+	// Scaffolding for test
+	public int[][] getBoard() {
+		return board;
+	}
    // The AWT invokes the update() method in response to the repaint() method
    // calls that are made as a checker is dragged. The default implementation
    // of this method, which is inherited from the Container class, clears the
