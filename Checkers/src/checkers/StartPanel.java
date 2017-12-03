@@ -42,8 +42,6 @@ public class StartPanel extends JPanel{
 
 
         g.setColor(new Color(0,0,0));
-//        g.drawLine(0,200,200,400);                  These make a weird diagonal line on main screen. Most likely DELETE
-//        g.draw3DRect(0, 0, 50, 400, true);
         
         for(int i=0;i<8;i++)  {
             if(i%2==0){
@@ -53,9 +51,7 @@ public class StartPanel extends JPanel{
             else{
                 g.fill3DRect(50, i*50, 50, 50, true);
             }
-//            g.fillPolygon(new int[]{80 * i, 40+80*i, 80 * i, -40+80*i},new int[]{200+80*i, 240+80*i,280+80*i, 240+80*i},4); These make a weird shapes on main screen. Most likely DELETE
-//            g.fillPolygon(new int[]{80 * i, 40+80*i, 80 * i, -40+80*i},new int[]{280+80*i, 320+80*i,360+80*i, 320+80*i},4);
-//            g.fillPolygon(new int[]{80 * i, 40+80*i, 80 * i, -40+80*i},new int[]{360+80*i, 400+80*i,420+80*i, 400+80*i},4);
+
         }
         g.drawLine(150, 0, 150, 400);
     }
