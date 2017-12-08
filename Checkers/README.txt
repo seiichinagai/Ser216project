@@ -5,9 +5,7 @@ Game Assigned to Team: Checkers
 
 COURSE PROJECT: SOFTWARE MAINTENANCE, TESTING & QUALITY
 
-Each team is assigned a different game, depending on the size of the team, with little to no documentation.
-The goal of this project is to understand the design of the game as well as the source code given, create and run
-Unit, Integration, System and Acceptance tests and implement bug fixes and enhancements.
+Each team is assigned a different game, depending on the size of the team, with little to no documentation.  The goal of this project is to understand the design of the game as well as the source code given, create and run Unit, Integration, System and Acceptance tests, and implement bug fixes and enhancements.
 
 Documents in Order of Deliverable:
 
